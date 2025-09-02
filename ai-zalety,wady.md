@@ -1,4 +1,10 @@
 Zalety:
+1) Automatyzacja – ułatwiają automatyzację zadań, zwłaszcza tych rutynowych i nudnych.
+2) Brak błędów ludzkich – ludzie od czasu do czasu popełniają błędy, ale nie aplikacje komputerowe.
+3) Szybsze podejmowanie decyzji – odpowiedzi można uzyskać w ciągu zaledwie milisekund, bez żadnego stresu.
+4) Gotowość 24/7 – aplikacje komputerowe nigdy się nie męczą.
+5) Niewielkie ryzyko – w czasie wojny lub wybuchu nuklearnego roboty mogą okazać się bardzo przydatne.
+6) Wzrost produktywności – komputery już teraz zwiększają naszą produktywność, a sztuczna inteligencja będzie ją zwiększać jeszcze bardziej.
 
 
 Wady i niebezbieczeństwa związane z ai:
