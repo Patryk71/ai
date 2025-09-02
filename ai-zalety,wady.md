@@ -1,0 +1,2 @@
+Zalety:
+Wady:
