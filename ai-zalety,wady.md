@@ -1,4 +1,16 @@
 Zalety:
+hragreklargklaegeagaer
+g
+ear
+grea
+gae
+gh
+earg
+ear
+g
+earg
+aer
+gare
 
 Wady:
 1) AW
