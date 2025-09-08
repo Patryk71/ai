@@ -5,6 +5,7 @@ const everything = document.querySelector('body'); // mapowanie elementów stron
 const glowne = document.querySelector('main')
 const pojemniki_plus = document.querySelectorAll('.pojemnik_plus')
 const pojemniki_minus = document.querySelectorAll('.pojemnik_minus')
+const pojemniki = document.querySelectorAll('.pojemnik')
 let obecny_zoom = window.devicePixelRatio;
 
 
@@ -31,32 +32,46 @@ function colourfun(){   //funkcja zarządzająca kolorami podczsa scrollowania
 
     console.log(Y)   
 }
-function div_sizes_plus(){ //funkcja powiększająca divy podczas scrollowania w dół
-    let Y_div = window.scrollY/3*obecny_zoom; //więkrzy dzielnik = wolniejsza animacja
+function isAtBottom() {
+  // true if user scrolled to bottom OR page is too short to scroll
+  return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1 || window.innerHeight >= document.documentElement.scrollHeight;
+}
 
+function div_sizes_plus(){ 
+    let Y_div = window.scrollY/3*obecny_zoom; 
+
+    if (isAtBottom()) {
+        pojemniki_plus.forEach((element) => {
+            element.style.width = "45vw";
+        });
+        return;
+    }
 
     pojemniki_plus.forEach((element, index) => {
-        let delay = 40+index*20 //więkrzy mnośnik = więkrze opóżnienie
-        let slide_size = Math.min(45,Math.max(0, 0+Y_div-delay));
-        element.style.width= `${slide_size}vw`;
+        let delay = 40 + index * 20;
+        let slide_size = Math.min(45, Math.max(0, Y_div - delay));
+        element.style.width = `${slide_size}vw`;
     });
-    
 }
 
-function div_sizes_minus(){ // funkcja pomniejszająca divy podczas scrollowania w dół
-    let Y_div = window.scrollY/4*obecny_zoom;//więkrzy dzielnik = wolniejsza animacja
+function div_sizes_minus(){ 
+    let Y_div = window.scrollY/4*obecny_zoom;
 
+    if (isAtBottom()) {
+        pojemniki_minus.forEach((element) => {
+            element.style.width = "45vw";
+        });
+        return;
+    }
 
     pojemniki_minus.forEach((element, index) => {
-        let delay = index*12//więkrzy mnośnik = więkrze opóżnienie
-        let slide_size =Math.min(45,45-Y_div+delay);
-        element.style.width= `${slide_size}vw`;
+        let delay = index * 12;
+        let slide_size = Math.min(45, 45 - Y_div + delay);
+        element.style.width = `${slide_size}vw`;
     });
-    
 }
-
-    
+window.addEventListener('load', div_sizes_minus());
+window.addEventListener('load', div_sizes_plus())
 window.addEventListener('scroll', colourfun);
 window.addEventListener('scroll', div_sizes_plus);
 window.addEventListener('scroll', div_sizes_minus);
-
